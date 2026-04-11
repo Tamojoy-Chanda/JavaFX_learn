@@ -41,6 +41,21 @@ public class HelloApplication extends Application {
         Stage stage2 = new Stage();
         stage2.setScene(sc1);
         stage2.setTitle("Learning Pane and Circle");
-        stage2.show();
+//        stage2.show();
+
+//        the binding property
+        Pane p10 = new Pane();
+        Scene sc10 = new Scene(p10,500,500);
+        Circle circle10 = new Circle();
+        circle10.centerXProperty().bind(p10.widthProperty().divide(2));
+        circle10.centerYProperty().bind(p10.heightProperty().divide(2));
+        circle10.setRadius(50);
+        circle10.setStroke(Color.LAVENDER);
+        circle10.setFill(Color.CORAL);
+        p10.getChildren().add(circle10);
+        Stage stage10 = new Stage();
+        stage10.setScene(sc10);
+        stage10.setTitle("Learning binding with Pane and Circle");
+        stage10.show();
     }
 }
